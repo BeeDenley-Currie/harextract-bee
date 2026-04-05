@@ -23,9 +23,16 @@ It is extremely basic right now but may evolve over time.
 Probably a ton. Written quickly and only tested on Chrome for Windows. Report them on
 the issues page.
 
+## Bee's Edits
+
+I've changed a couple of things, namely:
+* setting the sort order to be by ID (numeric),
+* prefixing filenames in the zip with a "p" and the ID (with leading zeroes so it still sorts nicely)
+    * e.g. p001 - resize, p002 - cover, ...
+
 ## License
 
-    Copyright (C) 2021-2022, Jason Cipriani <jason.cipriani.dev ~ gmail.com>
+    Original Copyright (C) 2021-2022, Jason Cipriani <jason.cipriani.dev ~ gmail.com>
     HARExtract home page: https://www.github.com/JC3/harextract
 
     This program is free software: you can redistribute it and/or modify
@@ -41,6 +48,8 @@ the issues page.
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
     
+    --------------------------------------------------------------------------
+    This fork keeps the same terms
     --------------------------------------------------------------------------
     
     HARExtract uses the library JSZip 3.7.1 released under the GPLv3 license.
