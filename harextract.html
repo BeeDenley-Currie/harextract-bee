@@ -136,8 +136,11 @@ function clearUI () {
     document.querySelectorAll(".clearme").forEach((el) => el.innerHTML = '');
 }
 function strCompare (a, b) {
-    return a.toLocaleLowerCase().localeCompare(b.toLocaleLowerCase());
+    return String(a).toLocaleLowerCase().localeCompare(String(b).toLocaleLowerCase());
 }
+// added alt function above function strCompare (a, b) {
+//     return a.toLocaleLowerCase().localeCompare(b.toLocaleLowerCase());
+// }
 function loadFailed (e) {
     clearUI();
     alertError('loading file', e);
@@ -191,7 +194,7 @@ function loadHARJSON (har) {
     // set path strings for all files; for non-skipped files, also strip common path prefixes.
     harents.forEach(ent => ent.path = ent.pathcomps.slice(commonpath.length).join('/'));
     skipped.forEach(ent => ent.path = ent.pathcomps.join('/'));
-       
+  // set the sort to be on id, (original was on path)     
     let entsort = function (a,b) {
         let p = strCompare(a.id, b.id);
         return (p != 0) ? p : strCompare(a.name, b.name);
