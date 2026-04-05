@@ -193,7 +193,7 @@ function loadHARJSON (har) {
     skipped.forEach(ent => ent.path = ent.pathcomps.join('/'));
        
     let entsort = function (a,b) {
-        let p = strCompare(a.path, b.path);
+        let p = strCompare(a.id, b.id);
         return (p != 0) ? p : strCompare(a.name, b.name);
     }
    
