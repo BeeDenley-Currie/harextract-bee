@@ -271,32 +271,6 @@ function populateTable (tableid, items, fields) {
 
 }
 
-    
-[
-    function buildZIP (ents, data) {
-    if (ents.length == 0)
-        throw new Error('There are no files to save.');
-    console.log(`harextract: generating archive with ${ents.length} file(s)...`);
-    let zip = new JSZip();
-    for (ent of ents) {
-        console.log(`harextract: adding ${ent.name} (${ent.id})...`);
-        try {
-            let filepath = `${ent.path}/${ent.name}`;
-            if (filepath.startsWith('/'))
-                filepath = filepath.substring(1);
-            let encoding = data[ent.id].response.content.encoding;
-            if (encoding != 'base64')
-                throw new Error(`Unsupported encoding for ${ent.name} (${ent.id}): ${encoding}`);
-            zip.file(filepath, data[ent.id].response.content.text, { base64: true });
-        } catch (e) {
-            console.log(e);
-        }
-    }
-    console.log('harextract: archive ready.');
-    return zip;
-}
-]:#
-
 function buildZIP (ents, data) {
     if (ents.length == 0)
         throw new Error('There are no files to save.');
