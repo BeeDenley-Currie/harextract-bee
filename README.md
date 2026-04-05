@@ -14,7 +14,7 @@ file.
 From there you can save individual files, and also save the entire collection as a ZIP
 file:
 
-![screenshot](screenshot.png)
+![screenshot](HARExtract-Beescreenshot.PNG)
 
 It is extremely basic right now but may evolve over time.
 
